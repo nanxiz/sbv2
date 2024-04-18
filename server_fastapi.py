@@ -126,7 +126,7 @@ if __name__ == "__main__":
         ),
         noisew: float = Query(
             DEFAULT_NOISEW,
-            description="SDPノイズ。大きくするほど発音の間隔にばらつきが出やすくなる",
+            description="SDPイズ。大きくするほど発音の間隔にばらつきが出やすくなる",
         ),
         length: float = Query(
             DEFAULT_LENGTH,

@@ -64,29 +64,17 @@ def download_jp_extra_pretrained_models():
                 local_dir_use_symlinks=False,
             )
 
-
-def download_jvnv_models():
-    files = [
-        "jvnv-F1-jp/config.json",
-        "jvnv-F1-jp/jvnv-F1-jp_e160_s14000.safetensors",
-        "jvnv-F1-jp/style_vectors.npy",
-        "jvnv-F2-jp/config.json",
-        "jvnv-F2-jp/jvnv-F2_e166_s20000.safetensors",
-        "jvnv-F2-jp/style_vectors.npy",
-        "jvnv-M1-jp/config.json",
-        "jvnv-M1-jp/jvnv-M1-jp_e158_s14000.safetensors",
-        "jvnv-M1-jp/style_vectors.npy",
-        "jvnv-M2-jp/config.json",
-        "jvnv-M2-jp/jvnv-M2-jp_e159_s17000.safetensors",
-        "jvnv-M2-jp/style_vectors.npy",
-    ]
+def download_njnj_model():
+    local_path = Path("model_assets/njnj/")
+    files = ["njnj_e96_s13500_thebest.safetensors", "config.json", "style_vectors.npy"]
     for file in files:
-        if not Path(f"model_assets/{file}").exists():
-            logger.info(f"Downloading {file}")
+
+        if not Path(local_path).joinpath(file).exists():
+            logger.info(f"Downloading njnj model {file}")
             hf_hub_download(
-                "litagin/style_bert_vits2_jvnv",
+                "nanxiz/zacabnzh_xxx_tts_0",
                 file,
-                local_dir="model_assets",
+                local_dir=local_path,
                 local_dir_use_symlinks=False,
             )
 
@@ -116,8 +104,6 @@ def main():
 
     download_jp_extra_pretrained_models()
 
-    if not args.skip_jvnv:
-        download_jvnv_models()
 
     if args.dataset_root is None and args.assets_root is None:
         return

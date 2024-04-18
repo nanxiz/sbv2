@@ -498,5 +498,5 @@ if __name__ == "__main__":
         )
 
     app.launch(
-        inbrowser=not args.no_autolaunch, share=args.share, server_name=args.server_name
+        inbrowser=not args.no_autolaunch, share=True, server_name=args.server_name
     )

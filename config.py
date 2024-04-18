@@ -195,10 +195,10 @@ class Webui_config:
 class Server_config:
     def __init__(
         self,
-        port: int = 5000,
+        port: int = 8000,
         device: str = "cuda",
-        limit: int = 100,
-        language: str = "JP",
+        limit: int = 1000,
+        language: str = "EN",
         origins: List[str] = None,
     ):
         self.port: int = port
