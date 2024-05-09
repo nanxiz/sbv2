@@ -24,3 +24,7 @@ COPY . /workspace
 RUN python initialize.py
 
 EXPOSE 8000
+
+COPY . /workspace
+
+CMD ["python", "handler.py"]
