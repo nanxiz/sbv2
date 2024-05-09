@@ -14,8 +14,12 @@ COPY requirements.txt /workspace/
 # Define a build-time argument for image type
 ARG IMAGE_TYPE=full
 
-RUN pip install -r requirements.txt
 RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+RUN pip install -r requirements.txt
+
+RUN pip install runpod
+
 COPY . /workspace
 RUN python initialize.py
 

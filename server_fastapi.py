@@ -269,6 +269,10 @@ if __name__ == "__main__":
         if not path.lower().endswith(".wav"):
             raise_validation_error(f"wav file not found in {path}", "path")
         return FileResponse(path=path, media_type="audio/wav")
+    
+    @app.get("/health")
+    def health_check():
+        return {"status": "ok"}
 
     logger.info(f"server listen: http://127.0.0.1:{config.server_config.port}")
     logger.info(f"API docs: http://127.0.0.1:{config.server_config.port}/docs")
