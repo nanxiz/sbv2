@@ -36,7 +36,7 @@ from common.log import logger
 from common.tts_model import Model, ModelHolder
 from config import config
 
-ln = config.server_config.language
+ln = "EN"
 
 
 def raise_validation_error(msg: str, param: str):
