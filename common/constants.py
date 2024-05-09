@@ -18,7 +18,7 @@ class Languages(str, enum.Enum):
     ZH = "ZH"
 
 
-DEFAULT_SDP_RATIO: float = 0.9
+DEFAULT_SDP_RATIO: float = 1
 DEFAULT_NOISE: float = 0.3
 DEFAULT_NOISEW: float = 0.45
 DEFAULT_LENGTH: float = 0.95

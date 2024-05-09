@@ -62,9 +62,9 @@ webui:  # For `webui.py`, which is not supported yet in Style-Bert-VITS2.
 
 # server_fastapi's config
 server:
-  port: 5000
+  port: 8000
   device: "cuda"
-  language: "JP"
-  limit: 100
+  language: "EN"
+  limit: 1000
   origins:
     - "*"

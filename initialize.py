@@ -66,6 +66,9 @@ def download_jp_extra_pretrained_models():
 
 def download_njnj_model():
     local_path = Path("model_assets/njnj/")
+    if not local_path.exists():
+        local_path.mkdir(parents=True, exist_ok=True)  
+        logger.info(f"Created directory {local_path}")
     files = ["njnj_e96_s13500_thebest.safetensors", "config.json", "style_vectors.npy"]
     for file in files:
 
@@ -103,6 +106,8 @@ def main():
     download_pretrained_models()
 
     download_jp_extra_pretrained_models()
+
+    download_njnj_model()
 
 
     if args.dataset_root is None and args.assets_root is None:
